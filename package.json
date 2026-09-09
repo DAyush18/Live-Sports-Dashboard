@@ -10,7 +10,7 @@
     "start": "node src/index.js",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-     "testing": "jest"
+    "testing": "jest"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "drizzle-orm": "^0.36.0",
     "express": "^5.2.1",
     "pg": "^8.23.0",
+    "ws": "^8.21.3",
     "zod": "^4.5.4"
   },
   "devDependencies": {
