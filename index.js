@@ -2,6 +2,7 @@ import express from "express";
 import http from "http";
 import { attachWebSocketServer } from "./ws/server.js";
 import { matchesRouter } from "./routes/matches.js";
+import { commentaryRouter} from "./routes/commentary.js";
 
 const app = express();
 
@@ -18,9 +19,11 @@ res.send("Server is running!");
 })
 
 app.use('/api/matches', matchesRouter);
+app.use('/api/matches/:id/commentary', commentaryRouter);
 
-const {broadcastMatchCreated} = attachWebSocketServer(server);
+const {broadcastMatchCreated, broadcastCommentary} = attachWebSocketServer(server);
 app.locals.broadcastMatchCreated = broadcastMatchCreated;
+app.locals.broadcastCommentary = broadcastCommentary;
 
 
 
